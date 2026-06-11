@@ -21,7 +21,8 @@ const AllRecipes = ({ userOnly = false, filters = {} }) => {
     const fetchRecipes = async () => {
       try {
         const basePath = userOnly ? '/api/recipes/my-recipes' : '/api/recipes';
-        const urlObj = new URL(basePath, window.location.origin);
+        const apiBase = import.meta.env.VITE_API_URL || window.location.origin;
+        const urlObj = new URL(basePath, apiBase);
 
         const params = new URLSearchParams({
           page: page.toString(),
