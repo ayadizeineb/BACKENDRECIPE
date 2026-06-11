@@ -5,8 +5,9 @@ function Navbar({ isAuthenticated, onShareClick, onLoginClick, onLogout }) {
     return (
         <nav className="navbar">
             <div className="logo">
-                <Link to="/">
-                    <img src="/logo.png" alt="logo" width={90} height={90} />
+                <Link to="/" className="logo-link">
+                    <span className="logo-icon">🍳</span>
+                    <span className="logo-text">cook<span className="logo-accent">pad</span></span>
                 </Link>
             </div>
             <ul className="nav-links">

@@ -1,36 +1,121 @@
-/* FilterBar.css */
-.filter-bar {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  padding: 1rem;
-  backdrop-filter: blur(12px);
-  background: rgba(255,255,255,0.1);
+/* FilterBar.css — Sidebar Panel Style */
+
+.filter-sidebar {
+  background: #ffffff;
   border-radius: 12px;
-  box-shadow: 0 4px 30px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+  width: 220px;
+  flex-shrink: 0;
+  overflow: hidden;
 }
-.filter-group {
+
+/* ── Header ── */
+.filter-sidebar-header {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  justify-content: space-between;
+  padding: 0.9rem 1.1rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  border-bottom: 1px solid #f0f0f0;
+  background: #fafafa;
 }
-.filter-label {
+
+.filter-reset-btn {
+  font-size: 0.72rem;
   font-weight: 600;
-  color: #fff;
-}
-.filter-chip {
+  color: #ff5500;
+  background: none;
   border: none;
-  background: rgba(255,255,255,0.2);
-  color: #fff;
-  padding: 0.3rem 0.8rem;
-  border-radius: 20px;
   cursor: pointer;
-  transition: background 0.3s, transform 0.2s;
+  padding: 0;
+  text-decoration: underline;
 }
-.filter-chip.active {
-  background: rgba(255,255,255,0.6);
-  transform: scale(1.05);
+
+/* ── Each collapsible section ── */
+.filter-sidebar-section {
+  border-bottom: 1px solid #f0f0f0;
 }
-.filter-chip:hover {
-  background: rgba(255,255,255,0.4);
+
+.filter-sidebar-section:last-child {
+  border-bottom: none;
+}
+
+/* ── Section toggle button ── */
+.filter-sidebar-toggle {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 1.1rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #333;
+  transition: background 0.15s ease;
+}
+
+.filter-sidebar-toggle:hover {
+  background: #f9f9f9;
+}
+
+.filter-toggle-icon {
+  font-size: 1.1rem;
+  color: #888;
+  font-weight: 400;
+  line-height: 1;
+}
+
+/* ── Checkbox list ── */
+.filter-checkbox-list {
+  list-style: none;
+  margin: 0;
+  padding: 0.2rem 0 0.6rem;
+}
+
+.filter-checkbox-item {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.42rem 1.1rem;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.filter-checkbox-item:hover {
+  background: #fff5f0;
+}
+
+/* ── Custom checkbox box ── */
+.filter-checkbox {
+  width: 16px;
+  height: 16px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #fff;
+  background: #fff;
+  flex-shrink: 0;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.filter-checkbox.checked {
+  background: #ff5500;
+  border-color: #ff5500;
+}
+
+.filter-checkbox-label {
+  font-size: 0.875rem;
+  color: #444;
+}
+
+.filter-checkbox-item:hover .filter-checkbox-label {
+  color: #ff5500;
 }

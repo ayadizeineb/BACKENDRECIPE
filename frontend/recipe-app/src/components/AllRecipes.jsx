@@ -4,7 +4,7 @@ import axios from 'axios';
 import './AllRecipes.css';
 
 const AllRecipes = ({ userOnly = false, filters = {} }) => {
-  const { category = '', difficulty = '' } = filters;
+  const { category = '', difficulty = '', tags = '' } = filters;
 
   const [recipes, setRecipes] = useState([]);
   const [page, setPage] = useState(1);
@@ -30,6 +30,7 @@ const AllRecipes = ({ userOnly = false, filters = {} }) => {
           ...(searchTerm && { search: searchTerm }),
           ...(category && { category }),
           ...(difficulty && { difficulty }),
+          ...(tags && { tags }),
         });
 
         urlObj.search = params.toString();
@@ -59,7 +60,7 @@ const AllRecipes = ({ userOnly = false, filters = {} }) => {
     };
 
     fetchRecipes();
-  }, [page, startsWith, searchTerm, userOnly, category, difficulty, limit]);
+  }, [page, startsWith, searchTerm, userOnly, category, difficulty, tags, limit]);
 
   // ---------------------------------------------------------------------------
   // Like — NO optimistic update: server is single source of truth.
