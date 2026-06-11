@@ -1,0 +1,36 @@
+/* FilterBar.css */
+.filter-bar {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+  backdrop-filter: blur(12px);
+  background: rgba(255,255,255,0.1);
+  border-radius: 12px;
+  box-shadow: 0 4px 30px rgba(0,0,0,0.1);
+}
+.filter-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.filter-label {
+  font-weight: 600;
+  color: #fff;
+}
+.filter-chip {
+  border: none;
+  background: rgba(255,255,255,0.2);
+  color: #fff;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+.filter-chip.active {
+  background: rgba(255,255,255,0.6);
+  transform: scale(1.05);
+}
+.filter-chip:hover {
+  background: rgba(255,255,255,0.4);
+}

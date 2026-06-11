@@ -1,0 +1,1389 @@
+/* ── MealPlanPage Stylesheet ────────────────────────────── */
+
+.meal-planner-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+    font-family: 'Outfit', 'Inter', sans-serif;
+    color: #291809;
+}
+
+/* ── Header ────────────────────────────────────────────── */
+.meal-planner-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 1.5rem 2rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+    border: 1px solid rgba(255, 85, 0, 0.05);
+}
+
+.meal-planner-title-group {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.meal-planner-title-group .emoji-icon {
+    font-size: 2.2rem;
+    background: #ff5500;
+    color: #ffffff;
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(255, 85, 0, 0.2);
+}
+
+.meal-planner-title-group h1 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin: 0 0 4px;
+    letter-spacing: -0.02em;
+}
+
+.meal-planner-title-group p {
+    font-size: 0.9rem;
+    color: #64748b;
+    margin: 0;
+}
+
+/* ── Weekly Dashboard Summary Panel ─────────────────────── */
+.weekly-dashboard {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+    margin-bottom: 2rem;
+}
+
+.dashboard-card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 1.25rem 1.5rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+    border: 1px solid rgba(221, 211, 205, 0.2);
+    display: flex;
+    flex-direction: column;
+}
+
+.db-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+}
+
+.db-card-header h3 {
+    margin: 0;
+    font-size: 0.92rem;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 700;
+}
+
+.db-icon {
+    font-size: 1.2rem;
+}
+
+.db-value {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #ff5500;
+    line-height: 1.1;
+    margin-bottom: 4px;
+}
+
+.db-value .db-unit {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #8c827a;
+}
+
+.db-sub {
+    font-size: 0.8rem;
+    color: #8c827a;
+    margin: 0;
+}
+
+/* Macros Breakdown Card */
+.macros-breakdown-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    justify-content: center;
+    height: 100%;
+}
+
+.macros-proportion-bar {
+    height: 12px;
+    width: 100%;
+    border-radius: 6px;
+    overflow: hidden;
+    display: flex;
+    background: #f1f5f9;
+}
+
+.macro-segment {
+    height: 100%;
+    transition: width 0.3s ease;
+}
+
+.macro-segment.protein { background-color: #ff5500; }
+.macro-segment.carbs { background-color: #ffaa00; }
+.macro-segment.fat { background-color: #dc2626; }
+
+.macros-labels {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.macro-label-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.macro-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.protein-dot { background-color: #ff5500; }
+.carbs-dot { background-color: #ffaa00; }
+.fat-dot { background-color: #dc2626; }
+
+.macro-text {
+    font-size: 0.78rem;
+    color: #334155;
+}
+
+/* Goals Status List */
+.daily-goals-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    overflow-y: auto;
+    max-height: 120px;
+    padding-right: 4px;
+}
+
+.daily-goal-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.mini-day-name {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #475569;
+    width: 30px;
+    text-transform: uppercase;
+}
+
+.mini-progress-track {
+    flex: 1;
+    height: 6px;
+    background: #f1f5f9;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.mini-progress-fill {
+    height: 100%;
+    background-color: #ff5500;
+    border-radius: 3px;
+    transition: width 0.3s ease;
+}
+
+.mini-progress-fill.goal-exceeded {
+    background-color: #ef4444;
+}
+
+.mini-day-value {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #334155;
+    width: 60px;
+    text-align: right;
+}
+
+/* ── Desktop View Grid ─────────────────────────────────── */
+.desktop-calendar-wrapper {
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(41, 24, 9, 0.04);
+    border: 1px solid rgba(221, 211, 205, 0.15);
+    overflow: hidden;
+    margin-bottom: 3rem;
+}
+
+.calendar-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.calendar-table th,
+.calendar-table td {
+    border: 1px solid #f1f5f9;
+    padding: 12px;
+    vertical-align: top;
+}
+
+.corner-th {
+    background: #fdf6f0;
+    color: #ff5500;
+    font-weight: 800;
+    font-size: 0.95rem;
+    text-align: center;
+    vertical-align: middle !important;
+    width: 120px;
+}
+
+.day-th {
+    background: #fdfaf7;
+    color: #291809;
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-align: center;
+    padding: 16px 12px !important;
+}
+
+.meal-type-td {
+    background: #fdfaf7;
+    color: #a0622a;
+    font-weight: 800;
+    font-size: 0.9rem;
+    text-align: center;
+    vertical-align: middle !important;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.calendar-cell {
+    height: 150px;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.calendar-cell:hover {
+    background-color: #fffaf5;
+}
+
+/* Drag & Drop Visual Indication */
+.drag-over-target {
+    border: 2px dashed #ff5500 !important;
+    background-color: rgba(255, 85, 0, 0.06) !important;
+    box-shadow: inset 0 0 10px rgba(255, 85, 0, 0.1);
+}
+
+.cell-content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    height: 100%;
+    justify-content: flex-start;
+}
+
+/* Cell Meal Card */
+.meal-cell-card {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    aspect-ratio: 16 / 10;
+    cursor: grab;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    border: 1.5px solid #ffffff;
+    transition: all 0.2s ease;
+}
+
+.meal-cell-card:active {
+    cursor: grabbing;
+}
+
+.meal-cell-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.meal-cell-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.meal-cell-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.3) 70%, rgba(0, 0, 0, 0) 100%);
+    padding: 6px 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.meal-cell-title {
+    color: #ffffff;
+    font-size: 0.72rem;
+    font-weight: 700;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 2px;
+}
+
+.meal-cell-kcal {
+    color: #ffaa00;
+    font-size: 0.65rem;
+    font-weight: 700;
+}
+
+/* Delete button inside cell card (Always visible on hover, clear at all times) */
+.remove-cell-btn {
+    background: rgba(220, 38, 38, 0.85);
+    color: #ffffff;
+    border: none;
+    border-radius: 50%;
+    width: 22px;
+    height: 22px;
+    font-size: 0.7rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    z-index: 10;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+    transition: all 0.2s ease;
+    opacity: 0.6;
+}
+
+.meal-cell-card:hover .remove-cell-btn {
+    opacity: 1;
+}
+
+.remove-cell-btn:hover {
+    background: #dc2626;
+    transform: scale(1.15);
+    opacity: 1 !important;
+}
+
+/* Cell Add Button */
+.cell-add-btn {
+    align-self: center;
+    margin-top: auto;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 1.5px dashed rgba(255, 85, 0, 0.3);
+    background: transparent;
+    color: #ff5500;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    opacity: 0.4;
+}
+
+.calendar-cell:hover .cell-add-btn {
+    opacity: 1;
+}
+
+.cell-add-btn:hover {
+    background: #ff5500;
+    color: #ffffff;
+    border-color: #ff5500;
+    transform: scale(1.1);
+    opacity: 1 !important;
+}
+
+/* Desktop Calories Footer Row */
+.calories-summary-row {
+    background: #fdfbf9;
+}
+
+.calories-summary-row td {
+    vertical-align: middle !important;
+}
+
+.row-label-td {
+    padding: 14px 12px !important;
+}
+
+.cal-row-title {
+    font-size: 0.82rem;
+    font-weight: 800;
+    color: #291809;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.cal-row-sub {
+    font-size: 0.68rem;
+    color: #64748b;
+    margin-top: 2px;
+}
+
+.cal-summary-cell {
+    padding: 12px;
+    text-align: center;
+}
+
+.cal-cell-val {
+    font-size: 0.9rem;
+    color: #ff5500;
+    margin-bottom: 6px;
+}
+
+.cal-progress-bar {
+    height: 6px;
+    width: 100%;
+    background: #e2e8f0;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.cal-progress-fill {
+    height: 100%;
+    border-radius: 3px;
+    background: linear-gradient(90deg, #ff5500, #ffaa00);
+    transition: width 0.3s ease;
+}
+
+.cal-progress-fill.goal-exceeded {
+    background: linear-gradient(90deg, #ef4444, #b91c1c) !important;
+}
+
+/* ── Mobile Layout ────────────────────────────────────── */
+.mobile-day-tabs {
+    display: none;
+}
+
+.mobile-day-content {
+    display: none;
+}
+
+/* ── Recipe Picker Modal ──────────────────────────────── */
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(41, 24, 9, 0.5);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.picker-modal-content {
+    background: #ffffff;
+    width: 90%;
+    max-width: 680px;
+    max-height: 85vh;
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    padding: 1.8rem;
+    display: flex;
+    flex-direction: column;
+    animation: slideUp 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+@keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.picker-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 1px solid #f1f5f9;
+    padding-bottom: 1rem;
+    margin-bottom: 1.25rem;
+}
+
+.picker-header h2 {
+    font-size: 1.4rem;
+    font-weight: 800;
+    margin: 0 0 4px;
+}
+
+.picker-subtitle {
+    font-size: 0.85rem;
+    color: #64748b;
+    margin: 0;
+}
+
+.picker-subtitle strong {
+    color: #ff5500;
+}
+
+.picker-close-btn {
+    background: #f1f5f9;
+    border: none;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    font-size: 1.4rem;
+    font-weight: 300;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.picker-close-btn:hover {
+    background: #e2e8f0;
+    color: #ef4444;
+}
+
+/* Picker Search Form */
+.picker-search-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 1.5rem;
+}
+
+.picker-search-wrapper {
+    flex: 1;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.picker-search-icon {
+    position: absolute;
+    left: 14px;
+    font-size: 0.95rem;
+    color: #8c827a;
+    pointer-events: none;
+}
+
+.picker-search-input {
+    width: 100%;
+    padding: 11px 16px 11px 40px;
+    border: 1.5px solid #cbd5e1;
+    border-radius: 10px;
+    font-size: 0.92rem;
+    color: #1e293b;
+    background: #ffffff;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+.picker-search-input:focus {
+    border-color: #ff5500;
+    box-shadow: 0 0 0 3px rgba(255, 85, 0, 0.1);
+}
+
+.picker-search-clear {
+    position: absolute;
+    right: 12px;
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    color: #94a3b8;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.picker-search-btn {
+    background: #ff5500;
+    color: #ffffff;
+    border: none;
+    padding: 0 20px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.picker-search-btn:hover {
+    background: #e04a00;
+}
+
+/* Picker Results Grid */
+.picker-results {
+    flex: 1;
+    overflow-y: auto;
+    min-height: 250px;
+    max-height: 48vh;
+    padding-right: 4px;
+}
+
+.picker-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.picker-recipe-card {
+    border: 1px solid #f1f5f9;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    background: #fdfdfd;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.picker-recipe-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border-color: rgba(255, 85, 0, 0.15);
+}
+
+.picker-recipe-img {
+    width: 100%;
+    height: 110px;
+    object-fit: cover;
+}
+
+.picker-recipe-info {
+    padding: 10px 12px;
+    flex: 1;
+}
+
+.picker-recipe-category {
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: #ff5500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    display: block;
+    margin-bottom: 2px;
+}
+
+.picker-recipe-title {
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin: 0 0 4px;
+    color: #291809;
+    line-height: 1.25;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.picker-recipe-nut {
+    font-size: 0.72rem;
+    color: #64748b;
+    font-weight: 500;
+}
+
+.picker-recipe-select-btn {
+    background: #fdf6f0;
+    color: #ff5500;
+    border: none;
+    border-top: 1px solid #f1f5f9;
+    width: 100%;
+    padding: 8px 0;
+    font-size: 0.8rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.picker-recipe-card:hover .picker-recipe-select-btn {
+    background: #ff5500;
+    color: #ffffff;
+}
+
+/* Modal Pagination */
+.picker-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 1.5rem;
+    border-top: 1px solid #f1f5f9;
+    padding-top: 1rem;
+}
+
+.picker-pag-btn {
+    padding: 6px 12px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    background: #fff;
+    color: #334155;
+    font-size: 0.78rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.picker-pag-btn:hover:not(:disabled) {
+    background: #ff5500;
+    color: #fff;
+    border-color: #ff5500;
+}
+
+.picker-pag-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.picker-pag-info {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #64748b;
+    margin: 0 0.5rem;
+}
+
+/* ── Responsive Styling (Mobile overrides) ────────────── */
+@media (max-width: 768px) {
+    .meal-planner-container {
+        margin: 1rem auto;
+        padding: 0 1rem;
+    }
+
+    .meal-planner-header {
+        padding: 1rem 1.25rem;
+        margin-bottom: 1.25rem;
+    }
+
+    .meal-planner-title-group h1 {
+        font-size: 1.4rem;
+    }
+
+    .meal-planner-title-group p {
+        font-size: 0.8rem;
+    }
+
+    .meal-planner-title-group .emoji-icon {
+        width: 44px;
+        height: 44px;
+        font-size: 1.6rem;
+    }
+
+    /* Weekly Dashboard summary stack for mobile */
+    .weekly-dashboard {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+        margin-bottom: 1.25rem;
+    }
+
+    .dashboard-card {
+        padding: 1rem 1.25rem;
+    }
+
+    /* Hide Desktop Calendar */
+    .desktop-calendar-wrapper {
+        display: none;
+    }
+
+    /* Show Mobile Navigation tabs */
+    .mobile-day-tabs {
+        display: flex;
+        overflow-x: auto;
+        gap: 6px;
+        padding-bottom: 8px;
+        margin-bottom: 1.25rem;
+        scroll-behavior: smooth;
+        scrollbar-width: none;
+    }
+
+    .mobile-day-tabs::-webkit-scrollbar {
+        display: none;
+    }
+
+    .mobile-day-tab {
+        flex: 0 0 calc(100% / 7 - 6px);
+        min-width: 50px;
+        background: #fdfbf9;
+        border: 1px solid #fae8d8;
+        border-radius: 10px;
+        padding: 10px 4px;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition: all 0.2s ease;
+        position: relative;
+    }
+
+    .mobile-day-tab.active {
+        background: #ff5500;
+        border-color: #ff5500;
+    }
+
+    .mobile-day-tab .day-name {
+        font-size: 0.75rem;
+        font-weight: 700;
+        color: #7c2d12;
+        text-transform: uppercase;
+    }
+
+    .mobile-day-tab.active .day-name {
+        color: #ffffff;
+    }
+
+    .day-badge {
+        position: absolute;
+        top: -4px;
+        right: -4px;
+        background: #dc2626;
+        color: #ffffff;
+        border-radius: 50%;
+        width: 15px;
+        height: 15px;
+        font-size: 0.65rem;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #ffffff;
+    }
+
+    /* Mobile Day Slots Panel */
+    .mobile-day-content {
+        display: block;
+        background: #ffffff;
+        border-radius: 16px;
+        padding: 1.25rem;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+        border: 1px solid rgba(221, 211, 205, 0.1);
+        margin-bottom: 2rem;
+    }
+
+    .mobile-day-title-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 2px solid #fff5f0;
+        padding-bottom: 10px;
+        margin-bottom: 1.25rem;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .mobile-day-content h2 {
+        font-size: 1.25rem;
+        font-weight: 800;
+        color: #ff5500;
+        margin: 0;
+    }
+
+    .mobile-day-total {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 4px;
+        width: 130px;
+    }
+
+    .kcal-number {
+        font-size: 0.8rem;
+        color: #475569;
+    }
+
+    .kcal-number strong {
+        color: #ff5500;
+        font-size: 0.95rem;
+    }
+
+    .mobile-progress-bar {
+        height: 6px;
+        width: 100%;
+        background: #e2e8f0;
+        border-radius: 3px;
+        overflow: hidden;
+    }
+
+    .mobile-progress-fill {
+        height: 100%;
+        background-color: #ff5500;
+        border-radius: 3px;
+        transition: width 0.3s ease;
+    }
+
+    .mobile-progress-fill.goal-exceeded {
+        background-color: #ef4444;
+    }
+
+    .mobile-slots {
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+    }
+
+    .mobile-slot-card {
+        border: 1px solid #f1f5f9;
+        border-radius: 12px;
+        overflow: hidden;
+        background: #fdfdfd;
+        transition: all 0.2s ease;
+    }
+
+    .slot-header {
+        background: #fdf6f0;
+        padding: 8px 12px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #f1f5f9;
+    }
+
+    .slot-header h3 {
+        margin: 0;
+        font-size: 0.88rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        color: #a0622a;
+        letter-spacing: 0.04em;
+    }
+
+    .add-slot-btn {
+        background: #ff5500;
+        color: #ffffff;
+        border: none;
+        border-radius: 20px;
+        padding: 4px 12px;
+        font-size: 0.75rem;
+        font-weight: 700;
+        cursor: pointer;
+        transition: background 0.2s;
+    }
+
+    .add-slot-btn:hover {
+        background: #e04a00;
+    }
+
+    .slot-body {
+        padding: 10px 12px;
+    }
+
+    .empty-slot-msg {
+        font-size: 0.78rem;
+        color: #94a3b8;
+        font-style: italic;
+    }
+
+    .meals-list {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .meal-item-card {
+        display: flex;
+        align-items: center;
+        background: #ffffff;
+        border: 1px solid #f1f5f9;
+        border-radius: 8px;
+        padding: 6px 12px 6px 6px;
+        cursor: grab;
+        position: relative;
+        transition: all 0.2s;
+    }
+
+    .meal-item-card:active {
+        cursor: grabbing;
+    }
+
+    .meal-item-card:hover {
+        border-color: rgba(255, 85, 0, 0.2);
+    }
+
+    .drag-handle-indicator {
+        font-size: 0.9rem;
+        color: #cbd5e1;
+        margin-right: 6px;
+        user-select: none;
+    }
+
+    .meal-item-img {
+        width: 44px;
+        height: 44px;
+        object-fit: cover;
+        border-radius: 6px;
+        margin-right: 10px;
+    }
+
+    .meal-item-info {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        min-width: 0;
+    }
+
+    .meal-item-title {
+        font-size: 0.82rem;
+        font-weight: 700;
+        color: #291809;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        margin-bottom: 2px;
+    }
+
+    .meal-item-meta {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+    }
+
+    .meal-item-cat {
+        font-size: 0.68rem;
+        color: #ff5500;
+        font-weight: 600;
+    }
+
+    .meal-item-kcal {
+        font-size: 0.68rem;
+        color: #64748b;
+    }
+
+    /* Delete button mobile */
+    .remove-meal-btn {
+        background: none;
+        border: none;
+        color: #ef4444;
+        font-size: 1.1rem;
+        cursor: pointer;
+        padding: 0 4px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.2s;
+    }
+
+    .remove-meal-btn:hover {
+        color: #dc2626;
+        transform: scale(1.15);
+    }
+
+    /* Modal Mobile adaptions */
+    .picker-modal-content {
+        padding: 1.2rem;
+        width: 95%;
+        max-height: 90vh;
+    }
+
+    .picker-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .picker-recipe-card {
+        flex-direction: row;
+        height: 80px;
+    }
+
+    .picker-recipe-img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .picker-recipe-info {
+        padding: 8px 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .picker-recipe-select-btn {
+        border-top: none;
+        border-left: 1px solid #f1f5f9;
+        width: 80px;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 4px;
+        box-sizing: border-box;
+    }
+}
+
+/* ── Dark Mode Overrides ─────────────────────────────────── */
+@media (prefers-color-scheme: dark) {
+    .meal-planner-container {
+        color: #f1f5f9;
+    }
+
+    .meal-planner-header {
+        background: #1e1b18;
+        border-color: rgba(255, 85, 0, 0.08);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .meal-planner-title-group h1 {
+        color: #ffffff;
+    }
+
+    .meal-planner-title-group p {
+        color: #94a3b8;
+    }
+
+    /* Weekly Dashboard Summary panel dark mode */
+    .dashboard-card {
+        background: #1e1b18;
+        border-color: rgba(255, 255, 255, 0.05);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .db-sub {
+        color: #94a3b8;
+    }
+
+    .macro-text {
+        color: #cbd5e1;
+    }
+
+    .mini-day-name {
+        color: #94a3b8;
+    }
+
+    .mini-progress-track {
+        background: #2b2622;
+    }
+
+    .mini-day-value {
+        color: #e2e8f0;
+    }
+
+    .loading-state,
+    .error-state,
+    .picker-loading,
+    .picker-empty {
+        background: #1e1b18;
+        border-color: rgba(255, 85, 0, 0.15);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .desktop-calendar-wrapper {
+        background: #1e1b18;
+        border-color: rgba(255, 255, 255, 0.05);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .calendar-table th,
+    .calendar-table td {
+        border-color: #2b2622;
+    }
+
+    .corner-th {
+        background: #2b231c;
+        color: #ff7733;
+    }
+
+    .day-th {
+        background: #25201c;
+        color: #f1f5f9;
+    }
+
+    .meal-type-td {
+        background: #25201c;
+        color: #f0a060;
+    }
+
+    .calendar-cell:hover {
+        background-color: #2e2620;
+    }
+
+    /* Dark Mode Drag and drop target */
+    .drag-over-target {
+        background-color: rgba(255, 119, 51, 0.08) !important;
+        border-color: #ff7733 !important;
+    }
+
+    .meal-cell-card {
+        border-color: #1e1b18;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    }
+
+    .calories-summary-row {
+        background: #25201c;
+    }
+
+    .cal-row-title {
+        color: #ffffff;
+    }
+
+    .cal-row-sub {
+        color: #94a3b8;
+    }
+
+    .cal-progress-bar {
+        background: #2b2622;
+    }
+
+    .picker-modal-content {
+        background: #1e1b18;
+        border-color: rgba(255, 255, 255, 0.08);
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+    }
+
+    .picker-header {
+        border-bottom-color: #2b2622;
+    }
+
+    .picker-header h2 {
+        color: #ffffff;
+    }
+
+    .picker-subtitle {
+        color: #94a3b8;
+    }
+
+    .picker-close-btn {
+        background: #2b2622;
+        color: #e2e8f0;
+    }
+
+    .picker-close-btn:hover {
+        background: #3e3229;
+    }
+
+    .picker-search-input {
+        background: #25201c;
+        border-color: #3e3229;
+        color: #e2e8f0;
+    }
+
+    .picker-search-input:focus {
+        border-color: #ff7733;
+        box-shadow: 0 0 0 3px rgba(255, 119, 51, 0.15);
+    }
+
+    .picker-recipe-card {
+        border-color: #2b2622;
+        background: #25201c;
+    }
+
+    .picker-recipe-card:hover {
+        border-color: rgba(255, 119, 51, 0.25);
+    }
+
+    .picker-recipe-title {
+        color: #e2e8f0;
+    }
+
+    .picker-recipe-select-btn {
+        background: #2b231c;
+        color: #ff7733;
+        border-top-color: #3e3229;
+    }
+
+    .picker-recipe-card:hover .picker-recipe-select-btn {
+        background: #ff5500;
+        color: #ffffff;
+    }
+
+    .picker-pagination {
+        border-top-color: #2b2622;
+    }
+
+    .picker-pag-btn {
+        background: #1e1b18;
+        border-color: #3e3229;
+        color: #e2e8f0;
+    }
+
+    .picker-pag-btn:hover:not(:disabled) {
+        background: #ff5500;
+        border-color: #ff5500;
+        color: #ffffff;
+    }
+
+    .picker-pag-info {
+        color: #94a3b8;
+    }
+
+    /* Mobile Dark Mode items */
+    .mobile-day-tab {
+        background: #25201c;
+        border-color: #3e3229;
+    }
+
+    .mobile-day-tab.active {
+        background: #ff5500;
+        border-color: #ff5500;
+    }
+
+    .mobile-day-tab .day-name {
+        color: #f0a060;
+    }
+
+    .mobile-day-tab.active .day-name {
+        color: #ffffff;
+    }
+
+    .mobile-day-content {
+        background: #1e1b18;
+        border-color: rgba(255, 255, 255, 0.05);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .mobile-day-content h2 {
+        border-bottom-color: #2b2622;
+    }
+
+    .mobile-slot-card {
+        border-color: #2b2622;
+        background: #25201c;
+    }
+
+    .slot-header {
+        background: #2b231c;
+        border-bottom-color: #2b2622;
+    }
+
+    .slot-header h3 {
+        color: #f0a060;
+    }
+
+    .meal-item-card {
+        background: #1e1b18;
+        border-color: #2b2622;
+    }
+
+    .meal-item-card:hover {
+        border-color: rgba(255, 119, 51, 0.25);
+    }
+
+    .meal-item-title {
+        color: #e2e8f0;
+    }
+
+    .meal-item-cat {
+        color: #ff7733;
+    }
+
+    .meal-item-kcal {
+        color: #94a3b8;
+    }
+}

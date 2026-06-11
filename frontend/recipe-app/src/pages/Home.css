@@ -1,0 +1,97 @@
+.home {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 80px 160px;
+    overflow: hidden;
+    background: #fff8f5;
+}
+
+/* Left column */
+.left {
+    max-width: 520px;
+    z-index: 1;
+}
+
+.left h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+.left p {
+    font-size: 1.05rem;
+    color: #555555;
+    line-height: 1.7;
+    margin-bottom: 1.75rem;
+}
+
+/* Button */
+.btn {
+    background: #ff5500;
+    color: #ffffff;
+    border: none;
+    padding: 14px 28px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.btn:hover {
+    background: #e04a00;
+    transform: translateY(-2px);
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+/* Right column */
+.right {
+    z-index: 1;
+    flex-shrink: 0;
+}
+
+.right img {
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 20px 60px rgba(255, 85, 0, 0.2);
+}
+
+/* SVG wave background */
+.bg {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    line-height: 0;
+    z-index: 0;
+}
+
+.bg svg {
+    width: 100%;
+    display: block;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .home {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 24px 140px;
+    }
+
+    .right {
+        margin-top: 2rem;
+    }
+
+    .left h1 {
+        font-size: 1.9rem;
+    }
+}

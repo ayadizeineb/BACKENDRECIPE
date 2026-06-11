@@ -24,12 +24,16 @@ const userRoutes = require('./routes/UserRoute');
 const aiRoutes = require('./routes/ai');
 
 // Validate essential environment variables
-const requiredEnv = ['SECRET_KEY', 'MONGO_URI', 'OPENAI_API_KEY'];
+const requiredEnv = ['SECRET_KEY', 'MONGO_URI'];
 const missingEnv = requiredEnv.filter(key => !process.env[key]);
 if (missingEnv.length > 0) {
   console.error('Missing required environment variables:', missingEnv.join(', '));
   process.exit(1);
 }
+if (!process.env.OPENAI_API_KEY) {
+  console.warn('Warning: OPENAI_API_KEY not set — AI features will be disabled.');
+}
+
 
 // Secure CORS
 const allowedOrigin = process.env.FRONTEND_URL || 'http://localhost:5173';

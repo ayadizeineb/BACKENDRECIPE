@@ -1,0 +1,133 @@
+/* Modal.css - premium glassmorphism modal styling */
+
+/* Backdrop with subtle blur */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px) saturate(180%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  cursor: pointer;
+}
+
+/* Modal box with glass effect */
+.modal-box {
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 1rem;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  padding: 2rem 2.5rem;
+  max-width: 360px;
+  width: 90%;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  cursor: default;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.modal-box:hover {
+  transform: translateY(-2px);
+}
+
+/* Title */
+.modal-title {
+  margin: 0 0 1.5rem 0;
+  font-family: 'Inter', sans-serif;
+  font-size: 1.75rem;
+  font-weight: 600;
+  text-align: center;
+  color: #111;
+}
+
+/* Form layout */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Input fields */
+.modal-input {
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(4px);
+  font-size: 1rem;
+  color: #111;
+  transition: background 0.2s;
+}
+
+.modal-input:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.7);
+}
+
+/* Submit button */
+.modal-submit {
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  background: linear-gradient(135deg, #ff7e5f, #feb47b);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  font-size: 1rem;
+}
+
+.modal-submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Close button – floating X */
+.modal-close {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  background: transparent;
+  border: none;
+  font-size: 1.25rem;
+  color: #333;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.modal-close:hover {
+  color: #ff4d4d;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .modal-box {
+    padding: 1.5rem 1.75rem;
+  }
+  .modal-title {
+    font-size: 1.5rem;
+  }
+}
+
+.modal-toggle-text {
+  margin-top: 1.25rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #444;
+}
+
+.modal-toggle-link {
+  color: #ff5500;
+  cursor: pointer;
+  font-weight: 600;
+  text-decoration: none;
+  margin-left: 0.25rem;
+  transition: color 0.15s ease;
+}
+
+.modal-toggle-link:hover {
+  color: #e04a00;
+  text-decoration: underline;
+}
