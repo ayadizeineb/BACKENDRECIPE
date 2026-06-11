@@ -4,7 +4,8 @@ const verifyToken = require('../middleware/auth');
 const Recipe = require('../models/recipeschema');
 const upload = require('../middleware/upload');
 const cache = require('../middleware/cache');
-const invalidateCache = require('../utils/InvalidCache');
+const invalidateCache = require('../utils/invalidcache');
+
 const MealPlan = require('../models/MealPlan');
 
 // GET / - List recipes (cached 60s)
