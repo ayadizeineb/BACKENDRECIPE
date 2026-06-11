@@ -28,9 +28,19 @@ if (!process.env.OPENAI_API_KEY) {
 
 
 // Secure CORS
-const allowedOrigin = process.env.FRONTEND_URL || 'https://backendrecipe-1.onrender.com';
+const allowedOrigins = [
+  'https://frontendrecipe-fx5w.vercel.app',
+  'https://recipe-app-snowy-three-70.vercel.app',
+  'http://localhost:5173',
+  process.env.FRONTEND_URL,
+].filter(Boolean);
+
 app.use(cors({
-  origin: "https://frontendrecipe-fx5w.vercel.app",
+  origin: (origin, callback) => {
+    // allow requests with no origin (mobile apps, curl, etc.)
+    if (!origin || allowedOrigins.includes(origin)) return callback(null, true);
+    callback(new Error('Not allowed by CORS: ' + origin));
+  },
   credentials: true
 }));
 app.use(express.json());
