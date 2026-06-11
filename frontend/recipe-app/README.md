@@ -106,7 +106,7 @@ PORT=3000
 npm run dev   # runs server.js on http://localhost:3000
 
 # Frontend (in MERN/frontend/recipe-app)
-npm run dev   # Vite dev server on http://localhost:5173
+npm run dev   # Vite dev server on https://backendrecipe-1.onrender.com
 ```
 Open the Vite URL in a browser. You should see the Home page, can log in, add recipes, edit, delete, and see images.
 

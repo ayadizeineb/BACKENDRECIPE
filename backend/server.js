@@ -29,7 +29,10 @@ if (!process.env.OPENAI_API_KEY) {
 
 // Secure CORS
 const allowedOrigin = process.env.FRONTEND_URL || 'https://backendrecipe-1.onrender.com';
-app.use(cors({ origin: allowedOrigin, credentials: true }));
+app.use(cors({
+  origin: "https://frontendrecipe-fx5w.vercel.app",
+  credentials: true
+}));
 app.use(express.json());
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
