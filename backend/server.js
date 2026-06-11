@@ -4,6 +4,7 @@ const connectDB = require('./config/connectiondb');
 const cors = require('cors');
 const dotenv = require('dotenv');
 const path = require('path');
+// Environment variables loaded from .env
 dotenv.config();
 const errorHandler = require('./middleware/errorHandler');
 const apiLimiter = require('./middleware/rateLimiter');
