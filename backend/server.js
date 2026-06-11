@@ -29,6 +29,7 @@ if (!process.env.OPENAI_API_KEY) {
 
 // Secure CORS
 const allowedOrigins = [
+  'https://frontendrecipe-ptzc.vercel.app',
   'https://frontendrecipe-fx5w.vercel.app',
   'https://recipe-app-snowy-three-70.vercel.app',
   'http://localhost:5173',
@@ -38,7 +39,13 @@ const allowedOrigins = [
 app.use(cors({
   origin: (origin, callback) => {
     // allow requests with no origin (mobile apps, curl, etc.)
-    if (!origin || allowedOrigins.includes(origin)) return callback(null, true);
+    if (!origin) return callback(null, true);
+    
+    const isAllowed = allowedOrigins.includes(origin) || 
+                      origin.endsWith('.vercel.app') || 
+                      /^https?:\/\/localhost(:\d+)?$/.test(origin);
+
+    if (isAllowed) return callback(null, true);
     callback(new Error('Not allowed by CORS: ' + origin));
   },
   credentials: true
