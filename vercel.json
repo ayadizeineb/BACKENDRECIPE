@@ -1,4 +1,5 @@
 {
+  "outputDirectory": "frontend/recipe-app/dist",
   "version": 2,
   "builds": [
     {

@@ -70,7 +70,7 @@ MERN/
    - `PORT`: Server port (default: 3000)
    - `MONGO_URI`: MongoDB connection string
    - `SECRET_KEY`: Random string for signing JWT tokens
-   - `FRONTEND_URL`: URL of the frontend (default: `http://localhost:5173`)
+   - `FRONTEND_URL`: URL of the frontend (default: `https://backendrecipe-1.onrender.com`)
    - `OPENAI_API_KEY`: Your OpenAI Secret Key
 
 ### Step 2: Configure the Frontend
@@ -100,7 +100,7 @@ From the `frontend/recipe-app/` folder, run:
 ```bash
 npm run dev
 ```
-Open [http://localhost:5173](http://localhost:5173) in your browser to view the application.
+Open [https://backendrecipe-1.onrender.com](https://backendrecipe-1.onrender.com) in your browser to view the application.
 
 ---
 

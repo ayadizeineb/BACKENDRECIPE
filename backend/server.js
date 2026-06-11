@@ -28,7 +28,7 @@ if (!process.env.OPENAI_API_KEY) {
 
 
 // Secure CORS
-const allowedOrigin = process.env.FRONTEND_URL || 'http://localhost:5173';
+const allowedOrigin = process.env.FRONTEND_URL || 'https://backendrecipe-1.onrender.com';
 app.use(cors({ origin: allowedOrigin, credentials: true }));
 app.use(express.json());
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
