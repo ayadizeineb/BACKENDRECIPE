@@ -10,15 +10,6 @@ const errorHandler = require('./middleware/errorHandler');
 const apiLimiter = require('./middleware/rateLimiter');
 const Recipe = require('./models/recipeschema');
 const redis = require('./config/redis');
-// Give Redis a moment to connect before pinging
-setTimeout(async () => {
-  try {
-    await redis.ping();
-    console.log('[Cache] Redis connected successfully');
-  } catch (err) {
-    console.warn('[Cache] Redis unavailable, running without cache:', err.message);
-  }
-}, 1000);
 const PORT = process.env.PORT || 3000;
 const recipeRoutes = require('./routes/recipe');
 const userRoutes = require('./routes/UserRoute');
@@ -58,6 +49,9 @@ const startServer = async () => {
 
     // Redis — non-fatal if unavailable
     try {
+      if (redis.status === 'wait') {
+        await redis.connect();
+      }
       await redis.ping();
       console.log('[Cache] Redis connected successfully');
     } catch (err) {
